@@ -1,0 +1,222 @@
+<!doctype html>
+
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Morty — söpö mäyräkoira 🌸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+ 
+  <style>
+    :root{
+      --bg1: #FFF6FB;
+      --bg2: #FFF9F0;
+      --card: #FFFFFF;
+      --accent: #FFB6C1;
+      --accent-dark: #FF7AA2;
+      --muted: #7A6B7A;
+      --glass: rgba(255,255,255,0.7);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, #FFF2F8 0%, transparent 20%), radial-gradient(900px 500px at 90% 90%, #FFF9EE 0%, transparent 18%), linear-gradient(180deg,var(--bg1),var(--bg2));
+      color:#3d3d3d;
+      -webkit-font-smoothing:antialiased;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+    .wrap{
+      width:100%;
+      max-width:980px;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:28px;
+      align-items:start;
+    }
+    .hero{
+      background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.95));
+      border-radius:24px;
+      padding:28px;
+      box-shadow: 0 10px 30px rgba(122,90,122,0.08);
+      border:1px solid rgba(255,255,255,0.6);
+    }
+    h1{font-family:'Comfortaa', cursive; font-size:34px; margin:0 0 8px 0;}
+    p.lead{margin:0 0 18px 0; color:var(--muted)}
+    .cute-row{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+    .avatar{
+      width:88px;height:88px;border-radius:18px;overflow:hidden;flex:0 0 88px;box-shadow:0 8px 20px rgba(255,122,162,0.12);border:6px solid var(--glass);
+      background:linear-gradient(135deg,#FFD9E6,#FFF1F6);
+      display:flex;align-items:center;justify-content:center;font-size:44px
+    }
+    .card-small{
+      background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+      padding:14px;border-radius:14px;box-shadow:0 6px 18px rgba(122,90,122,0.06);border:1px solid rgba(255,255,255,0.6);
+    }
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      padding:10px 14px;border-radius:12px;border:0;cursor:pointer;font-weight:600;background:var(--accent);color:white;box-shadow:0 6px 14px rgba(255,122,162,0.18);
+      transition:transform .16s ease, box-shadow .16s ease, opacity .12s ease;
+      text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn.ghost{background:transparent;color:var(--accent-dark);border:2px solid rgba(255,122,162,0.12);font-weight:700}
+    .side{
+      position:relative;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.99));padding:20px;border-radius:18px;box-shadow:0 10px 30px rgba(122,90,122,0.06);border:1px solid rgba(255,255,255,0.6);
+      height:fit-content;
+    }
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:white;font-weight:700;font-size:13px}
+    ul.features{padding:0;margin:12px 0 0 0;list-style:none}
+    ul.features li{padding:10px 0;border-bottom:1px dashed rgba(122,90,122,0.06);display:flex;gap:12px;align-items:center}
+    .heart{width:36px;height:36px;border-radius:10px;background:linear-gradient(180deg,#FFEAF0,#FFDBE8);display:flex;align-items:center;justify-content:center;font-size:18px}
+    footer{margin-top:20px;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .wrap{grid-template-columns:1fr;}
+      .avatar{width:72px;height:72px;flex:0 0 72px}
+    }
+
+    /* small playful animation */
+    .sparkle{position:absolute;right:14px;top:14px;opacity:.95}
+    .sparkle svg{transform-origin:50% 50%;animation:spin 6s linear infinite}
+    @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <main class="hero">
+      <div class="cute-row">
+        <div class="avatar" aria-hidden="true">🐶</div>
+        <div style="flex:1">
+          <h1>Morty — mäyräkoira 🌸</h1>
+          <p class="lead">Morty on iloinen mäyräkoira, joka rakastaa pitkiä hissutteluhetkiä, pehmeitä peittoja ja herkkuja. Tällä sivulla kerrotaan Mortyn lempiasioista ja voit löytää hänen Instagraminsa.</p>
+          <div class="buttons">
+            <!-- Instagram link: korvaa OMA_INSTAGRAM omallasi -->
+            <a href="https://www.instagram.com/morticus_mort?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="btn">Instagram 📷</a>
+            <button class="btn ghost" id="yayBtn">Paina minua!</button>
+            <button class="btn ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Ota yhteyttä</button>
+            <a href="galleria.html" style="
+            display:inline-block;
+            background:#ffa8c2;
+            color:#ffffff;
+            padding:10px 20px;
+            border-radius:20px;
+            text-decoration:none;
+            font-weight:bold;
+          ">
+            🐶 Katso Mortyn kuvat, seuravalta sivulta
+          </a>
+          
+        </div>
+ 
+
+        </div>
+      </div>
+
+      <section style="margin-top:18px">
+        <div class="card-small">
+          <strong>Tiedot Mortysta</strong>
+          <p style="margin:8px 0 0 0;color:var(--muted)">Syntynyt: 14.11.2024 · Rotu: Mäyräkoira · Luonne: Utelias, lempeä ja vähän itsepäinen.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px">
+          <div class="card-small">
+            <h3 style="margin:0 0 6px 0">Lempilelu</h3>
+            <p style="margin:0;color:var(--muted)">Pehmoinen rotta, joka on Ikeasta.</p>
+          </div>
+          <div class="card-small">
+            <h3 style="margin:0 0 6px 0">Rutiinit</h3>
+            <p style="margin:0;color:var(--muted)">Aamukävely, päiväunet äitin sänkyssä ja iltaherkku.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top:16px" id="contact">
+        <h2 style="font-size:18px;margin:0 0 8px 0">Lähetä tervehdys Mortylle</h2>
+        <form action="https://formsubmit.co/jennifer2000@windowslive.com" method="POST" style="display:grid;gap:8px;max-width:540px">
+          <!-- Lomake lähettää viestin suoraan sähköpostiosoitteeseen jennifer2000@windowslive.com
+               Palvelu Formsubmit.co vaatii yleensä sähköpostivahvistuksen: ensimmäisestä lähetyksestä saat vahvistuspostin
+               joka pitää hyväksyä, jotta viestit ohjautuvat sähköpostiisi. Voit myös korvata action-arvon Formspree-URL:llä. -->
+          <input type="hidden" name="_subject" value="Uusi viesti Morty-sivulta">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="/thanks.html">
+
+          <input type="text" name="name" placeholder="Nimesi" aria-label="Nimi" required style="padding:10px;border-radius:10px;border:1px solid rgba(122,90,122,0.06);">
+          <input type="email" name="email" placeholder="Sähköposti" aria-label="Sähköposti" required style="padding:10px;border-radius:10px;border:1px solid rgba(122,90,122,0.06);">
+          <textarea name="message" placeholder="Kirjoita tervehdys..." rows="3" required style="padding:10px;border-radius:10px;border:1px solid rgba(122,90,122,0.06);"></textarea>
+          <div style="display:flex;gap:8px">
+            <button class="btn" type="submit">Lähetä 🎉</button>
+            <button class="btn ghost" type="reset">Tyhjennä</button>
+          </div>
+        </form>
+      </section>
+
+      <footer>
+        <small>Made with 💖 </small>
+      </footer>
+
+    </main>
+
+    <aside class="side">
+      <div class="sparkle" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2l1.9 4.3L18.5 8l-4.6 1.7L12 14l-1.9-4.3L5.5 8l4.6-1.7L12 2z" fill="#FFD6E2"/>
+          <circle cx="19" cy="5" r="2" fill="#FFB6C1"/>
+        </svg>
+      </div>
+
+      <span class="pill">Mortyn nurkka</span>
+      <h3 style="margin-top:12px;margin-bottom:6px">Pienet ilot</h3>
+      <ul class="features">
+        <li><div class="heart">💌</div><div><strong>Hymyttää</strong><div style="color:var(--muted);font-size:13px">Pieni viesti piristää Mortya.</div></div></li>
+        <li><div class="heart">🌷</div><div><strong>Peuhut</strong><div style="color:var(--muted);font-size:13px">Pehmeät peitot ja auringonpaiste.</div></div></li>
+        <li><div class="heart">✨</div><div><strong>Seikkailut</strong><div style="color:var(--muted);font-size:13px">Lyhyitä mutta tärkeitä tutkimusretkiä.</div></div></li>
+      </ul>
+      
+    </aside>
+  </div>
+
+  <script>
+    // Pieni konfetti-efekti ilman ulkopuolisia kirjastoja
+    function doConfetti(){
+      for(let i=0;i<18;i++){
+        const el = document.createElement('div');
+        el.style.position='fixed';
+        el.style.left = (50 + (Math.random()-0.5)*50) + '%';
+        el.style.top = '30%';
+        el.style.width = el.style.height = (8 + Math.random()*10) + 'px';
+        el.style.background = ['#FFB6C1','#FFD6E2','#FFEACD','#FFC9E3'][Math.floor(Math.random()*4)];
+        el.style.borderRadius='50%';
+        el.style.opacity='0.95';
+        el.style.pointerEvents='none';
+        el.style.transform = 'translateY(0) rotate(0deg)';
+        el.style.zIndex=9999;
+        document.body.appendChild(el);
+        const dx = (Math.random()-0.5)*200;
+        const duration = 1200 + Math.random()*900;
+        el.animate([
+          {transform:`translateY(0px) translateX(0px) rotate(0deg)`, opacity:1},
+          {transform:`translateY(${200 + Math.random()*200}px) translateX(${dx}px) rotate(${360*Math.random()}deg)`, opacity:0}
+        ],{duration:duration, easing:'cubic-bezier(.2,.8,.2,1)'});
+        setTimeout(()=> el.remove(), duration+50);
+      }
+    }
+
+    document.getElementById('yayBtn').addEventListener('click', ()=>{
+      doConfetti();
+      const btn = document.getElementById('yayBtn');
+      btn.textContent = 'Ihana! 💖';
+      setTimeout(()=> btn.textContent = 'Paina minua!', 1600);
+    })
+  </script>
+</body>
+</html>
